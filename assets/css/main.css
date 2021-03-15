@@ -185,6 +185,8 @@ h1, h2, h3, h4, h5, h6,
 /* $dark-1     : #55606D; */
 /* $dark-2     : #2A333C; */
 /* $dark-3     : #091A25; */
+/* $shadow     : rgba(3, 9, 12, 0.25); */
+/* $darkglass  : rgba(42, 51, 60, 0.4); */
 /* $black      : #03090C; */
 
 html {
@@ -194,8 +196,21 @@ html {
 }
 
 h1, h2, h3, h4, h5, h6,
-.heading {
+.heading,
+a, button {
 	color: #FFFFFF;
+}
+
+/* darkglass theme */
+.darkglass {
+	text-align: center;
+	text-decoration: none;
+	background-color: #091A25; /* fallback */
+	background-color: rgba(42, 51, 60, 0.4);
+	border: 1px solid #B8BCC7;
+	border-radius: 4px;
+	box-shadow: 0 1px 12px 0 rgba(3, 9, 12, 0.25);
+	backdrop-filter: blur(6px);
 }
 
 
@@ -209,5 +224,71 @@ h1, h2, h3, h4, h5, h6,
 	height: 1px;
 	width: 1px;
 	overflow: hidden;
+}
+
+
+/* ------------------------------
+* LAYOUT
+------------------------------ */
+
+.wrapper {
+	padding-left: 1rem;
+	padding-right: 1rem;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 1400px;
+}
+
+/* ------------------------------
+* TILE
+------------------------------ */
+
+.tile {
+	display: block;
+	text-align: center;
+	padding: 2.5rem;
+	margin-bottom: 1rem;
+}
+
+.tile-img {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.tile-img ~ * {
+	display: block;
+	margin-top: 0.5em;
+}
+
+.darkglass.tile {
+	transition: 0.2s ease-out all;
+	transition-property: border-color, transform;
+}
+
+/* add background color to pseudo element so it can be transitioned in */
+.darkglass.tile:after {
+	content: "";
+	display: block;
+	position: absolute;
+	top: -1px; right: -1px; bottom: -1px; left: -1px; /* behind border */
+	width: calc(100% + 2px);
+	height: calc(100% + 2px);
+	background-image: linear-gradient(225deg, rgba(247, 29, 226, 0.6) 0%, rgba(66, 198, 255, 0.6) 34%, rgba(61, 255, 128, 0.6) 100%);
+	border-radius: 4px;
+	z-index: -1;
+	opacity: 0;
+	transition: 0.2s ease-out all;
+	transition-property: transform, box-shadow, border-color;
+}
+.darkglass.tile:hover,
+.darkglass.tile:focus {
+	border-color: rgba(255, 255, 255, 0.25);
+	box-shadow: 0 1px 14px 0 rgba(255, 255, 255, 0.333);
+	transform: scale(1.0075);
+}
+
+.darkglass.tile:hover:after,
+.darkglass.tile:focus:after {
+	opacity: 1;
 }
 
