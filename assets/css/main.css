@@ -374,6 +374,26 @@ html { font-size: 16px; }
 	transform: translate(-50%, -50%);
 	width: 100%;
 }
+/* left align content edge with strike on small screens */
+@media (max-width: 899px) {
+	.hero-wrapper {
+		padding-left: 2.25rem;
+	}
+}
+
+/* strike */
+.hero-headline:before {
+	content: "";
+	display: block;
+	height: 1.21em; /* ~48px */
+	width: 0.14em; /* 10px */
+	position: absolute;
+	left: -0.042em;
+	bottom: 0.042em;
+	z-index: -1;
+	transform: skew(-24deg, 0);
+	background-image: linear-gradient(to bottom, #3DFF80 0%, #0AB6FF 34%, #F71DE2 100%);
+}
 
 .hero-img {
 	position: absolute;
