@@ -265,6 +265,12 @@ a:focus, button:focus, [tabindex]:focus {
 	outline-offset: 7px;
 }
 
+::selection {
+	color: #FFFFFF;
+	background-color: rgba(247, 29, 226, 0.6);
+	/*background-image: linear-gradient(45deg,  0%, rgba(66, 198, 255, 0.6) 34%, rgba(61, 255, 128, 0.6) 100%);*/
+}
+
 
 /* ------------------------------
 * UTILITIES
@@ -415,7 +421,6 @@ html { font-size: 16px; }
 .hero {
 	padding-top: 22.25%; /* maintain aspect ratio */
 	min-height: 12rem; /* make sure there's room for text on small screens */
-	margin-bottom: -0.75rem;
 	z-index: 1; /* fix hidden hero-img on Safari */
 }
 
