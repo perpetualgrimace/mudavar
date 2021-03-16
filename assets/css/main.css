@@ -416,6 +416,7 @@ html { font-size: 16px; }
 	padding-top: 22.25%; /* maintain aspect ratio */
 	min-height: 12rem; /* make sure there's room for text on small screens */
 	margin-bottom: -0.75rem;
+	z-index: 1; /* fix hidden hero-img on Safari */
 }
 
 .hero-wrapper {
@@ -524,6 +525,7 @@ html { font-size: 16px; }
 }
 
 .darkglass.tile {
+	z-index: 1; /* prevent gradient from disappearing on hover in Safari */
 	transition: border-color 0.2s ease-out;
 }
 
