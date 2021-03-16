@@ -352,8 +352,51 @@ html { font-size: 16px; }
 	align-items: center;
 }
 
+.nav-list {
+	display: flex;
+	right: -0.75rem; /* offset .nav-link padding */
+}
+
 .nav-link {
+	display: block;
+	font-weight: 700;
+	letter-spacing: 0.5px;
 	line-height: 4rem;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #B8BCC7;
+	padding-left: 0.75rem;
+	padding-right: 0.75rem;
+	transition: color 0.2s ease-out;
+}
+
+.nav-link:hover,
+.nav-link:focus,
+.nav-link[aria-current="page"] {
+	color: #FFFFFF;
+}
+
+/* active page bottom bump */
+.nav-link:after {
+	content: "";
+	display: block;
+	width: calc(100% - 2em);
+	height: 4px;
+	position: absolute;
+	left: 1em;
+	right: 1em;
+	bottom: 0;
+	background-image: linear-gradient(to left, #3DFF80 0%, #0AB6FF 34%, #F71DE2 100%);
+	border-radius: 4px 4px 0 0;
+	opacity: 0;
+	transform: scaleX(0);
+	transition: all 0.2s ease-out;
+	transition-property: opacity, transform;
+}
+
+.nav-link[aria-current="page"]:after {
+	opacity: 1;
+	transform: none;
 }
 
 
