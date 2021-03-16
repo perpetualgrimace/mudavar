@@ -166,9 +166,55 @@ html {
 	font-weight: 400;
 }
 
-h1, h2, h3, h4, h5, h6,
+h1, .title {
+	font-family: 'Amiri', serif;
+	font-weight: 700;
+	font-size: 3.55rem; /* 71px */
+	line-height: 0.986; /* 70px */
+}
+
+h2, h3, h4, h5, h6,
 .heading {
 	font-weight: 700;
+}
+
+h2, .u-font-xxl {
+	font-size: 1.75rem; /* 35px */
+	line-height: 1;
+}
+
+h3, .u-font-xl {
+	font-size: 1.45rem; /* 29px */
+	line-height: 1.0345; /* 30px */
+}
+
+h4, .u-font-lg {
+	font-size: 1.2rem; /* 24px */
+	line-height: 1.4583; /* 35px */
+}
+
+h5, .u-font-md {
+	font-size: 1rem; /* 20px */
+	line-height: 1.5; /* 30px */
+}
+
+p, li, h6, .u-font-sm {
+	font-size: 0.85rem; /* 17px */
+	line-height: 1.7647; /* 30px */
+}
+
+.u-compact {
+	line-height: 1.17647 !important; /* take font-sm down to 20px */
+}
+
+small, .u-font-xs {
+	font-size: 0.7rem; /* 14px */
+	line-height: 1.7857; /* 25px */
+}
+
+.u-font-xxs {
+	font-size: 0.6rem; /* 12px */
+	line-height: 1.666; /* 20px */
 }
 
 
