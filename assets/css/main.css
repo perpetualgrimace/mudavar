@@ -260,6 +260,11 @@ a, button {
 	backdrop-filter: blur(6px);
 }
 
+a:focus, button:focus, [tabindex]:focus {
+	outline: 3px dotted #0AB6FF;
+	outline-offset: 7px;
+}
+
 
 /* ------------------------------
 * UTILITIES
