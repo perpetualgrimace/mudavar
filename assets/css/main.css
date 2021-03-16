@@ -257,7 +257,7 @@ a, button {
 	border: 1px solid #B8BCC7;
 	border-radius: 4px;
 	box-shadow: 0 1px 12px 0 rgba(3, 9, 12, 0.25);
-	backdrop-filter: blur(6px);
+	backdrop-filter: blur(4px);
 }
 
 a:focus, button:focus, [tabindex]:focus {
@@ -524,8 +524,7 @@ html { font-size: 16px; }
 }
 
 .darkglass.tile {
-	transition: all 0.2s ease-out;
-	transition-property: border-color, transform;
+	transition: border-color 0.2s ease-out;
 }
 
 /* add background color to pseudo element so it can be transitioned in */
@@ -547,7 +546,7 @@ html { font-size: 16px; }
 .darkglass.tile:focus {
 	border-color: rgba(255, 255, 255, 0.425);
 	box-shadow: 0 1px 14px 0 rgba(255, 255, 255, 0.333);
-	transform: scale(1.0075);
+	backdrop-filter: blur(1px); /* transform + background blur makes inner content blurry */
 }
 
 .darkglass.tile:hover:after,
